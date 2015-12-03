@@ -1,0 +1,24 @@
+AddDefaultCharset UTF-8
+
+php_value short_open_tag 1
+php_value upload_max_filesize 1M
+
+Options -Indexes
+
+#ErrorDocument 400 /index.php
+#ErrorDocument 401 /index.php
+#ErrorDocument 403 /index.php
+#ErrorDocument 404 /index.php
+#ErrorDocument 500 /index.php
+#ErrorDocument 502 /index.php
+#ErrorDocument 504 /index.php
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^css/(.*)$ css/$1 [L]
+RewriteRule ^js/(.*)$ js/$1 [L]
+RewriteRule ^images/(.*)$ images/$1 [L]
+RewriteRule ^img/(.*)$ ./frontend/img/$1 [L]
+
+RewriteRule ^([^/]*)(.*)$ index.php?path=$1$2&%{QUERY_STRING} [L]

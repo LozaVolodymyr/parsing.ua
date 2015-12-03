@@ -1,0 +1,96 @@
+html, body { 
+  overflow: hidden; 
+  height: 100% 
+  font: 14px Tahoma, Arial, sans-serif!important;
+}
+
+body { 
+  margin:0; 
+  padding:0; 
+}
+
+p {
+  font: 14px Tahoma, Arial, sans-serif;
+}
+
+input[type=text],
+input[type=password] {
+  height: 32px;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 5px;
+  margin: 5px 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 100%;
+}
+ 
+input[type=text]:focus, 
+input[type=password]:focus,
+textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#login-form {
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  margin-left: -160px;
+  width: 320px;
+  z-index: 1;
+  display: none;
+}
+
+.input-cover {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-cover input { 
+  padding: 0 0 0 50px;
+  width: 268px;
+}
+
+.input-cover input:focus {
+  outline:0;
+}
+
+.input-icon {
+  width: 40px;
+  height: 25px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  border-right: 1px solid #454A54;  
+  text-align: center;
+}
+
+.input-icon i {
+  margin-top: 5px;
+}
+
+
+
+#login-submit {
+  width: 100%;
+}
+
+#login-submit i {
+  float: right;
+  margin-top: 10px;
+}
+
+#login-message {
+  text-align: center;
+  margin-top: 25px;
+}
