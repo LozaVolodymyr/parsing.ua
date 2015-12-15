@@ -1,1 +1,0 @@
-<h1>Your Cart Is Empty :(</h1>

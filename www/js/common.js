@@ -16,18 +16,3 @@ function query (command, callback, params) {
     }
   });
 };
-
-// query("test", function(response) {
-//   toastr.info(response.data.message)
-
-// });
-
-function addToCart(id) {
-  $('.price-developer-add .preloader').toggleClass('visible');
-  query("add", function(response) {
-
-    $('.price-developer-add .preloader').toggleClass('visible');
-      alert(response.data.message);
-
-  }, {id: id});
-} 

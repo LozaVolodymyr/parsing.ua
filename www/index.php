@@ -1,9 +1,6 @@
 <?php
   require_once ('config.php');
-  require_once (_ENGINE_CORE_PATH.'classes/core/clDb.php');
-  require_once (_ENGINE_CORE_PATH.'classes/core/clService.php');
-  require_once (_ENGINE_CORE_PATH.'classes/project/clProducts.php');
-  require_once (_ENGINE_CORE_PATH.'classes/project/clGameservices.php');
+  require_once (_ENGINE_CORE_PATH.'classes/DjinniDevelopersParser.php');
   
   session_save_path(dirname(__FILE__)."/sessions_store/");
   ini_set("session.gc_maxlifetime", SESSION_TIMEOUT);
@@ -12,7 +9,7 @@
 
   session_start();
 
-  $Db = Db::getInstance();
+  // $Db = Db::getInstance();
 
   $document = array();
   $document["template"] = "";
@@ -34,6 +31,7 @@
   
   require_once (_ENGINE_LIB_PATH."smarty/Smarty.class.php");
   $smarty = new Smarty();
+  if (empty($path[0])) $path[0] = 'index'; 
 
   if(isset($path[0]) && $path[0] && is_file("./controllers/".$path[0].".php"))
     require_once("./controllers/".$path[0].".php");

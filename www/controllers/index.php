@@ -1,5 +1,11 @@
 <?php
-		$res = new parsing();
-		$tobd = $res->parse();
- 		$my_bd = json_encode($tobd);
-		// echo $my_bd; 	
+		$res = new DjinniDeveloper();
+		$rev = new DjinniDevelopersParser();
+		$links = $rev->getLinksList();
+		print_r($links);
+		// $tobd = $res->getLink();
+ 		// echo $res->link;
+ 		$devs = $res->getDevelopersInfo();
+ 		print_r($devs);
+
+	

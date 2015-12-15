@@ -39,16 +39,8 @@
 </head>
 
 <body>
-  <header>
-      <div style="text-align: center;">
-        <h1>Test successful</h1>
-        <img src="./images/vault_boy.png">
-      </div>
-      <ul class="main-menu clearfix">
-        <li><a  href="/games">Games</a></li>
-        <li><a  href="/cart">Cart</a></li>
-      </ul>
-  </header>
+
+  
   <div class="wrapper">
       <div class="container">
         {if $document.template && file_exists("templates/`$document.template`.tpl")}
@@ -57,5 +49,6 @@
       </div>
   </div> 
 </body>
+
 <script src="./js/common.js"></script>
 </html>

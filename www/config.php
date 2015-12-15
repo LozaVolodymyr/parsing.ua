@@ -18,6 +18,6 @@ define('_ROOT_URL',             'http://'.str_replace('www.', '', $_SERVER['HTTP
 define('HOST',                  str_replace('www.', '', $_SERVER['HTTP_HOST']));
 define('_ENGINE_CORE_PATH',     _ROOT_HOME_PATH.'engine/');
 define('_ENGINE_LIB_PATH',      _ENGINE_CORE_PATH.'lib/');
-define("SESSION_TIMEOUT",       86400);
+define("SESSION_TIMEOUT",       864000);
 define('DIR_IMAGE',             _ROOT_URL.'images/');
 ?>

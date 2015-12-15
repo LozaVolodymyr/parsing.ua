@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2015-12-02 16:12:35
+<?php /* Smarty version Smarty-3.1.16, created on 2015-12-14 18:05:00
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5616565cc384b0b059-89458670%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f90be83b235fb03cc225b11607032e9ddd415899' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1449065552,
+      1 => 1450109097,
       2 => 'file',
     ),
   ),
@@ -65,16 +65,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 
 <body>
-  <header>
-      <div style="text-align: center;">
-        <h1>Test successful</h1>
-        <img src="./images/vault_boy.png">
-      </div>
-      <ul class="main-menu clearfix">
-        <li><a  href="/games">Games</a></li>
-        <li><a  href="/cart">Cart</a></li>
-      </ul>
-  </header>
+
+  
   <div class="wrapper">
       <div class="container">
         <?php if ($_smarty_tpl->tpl_vars['document']->value['template']&&file_exists("templates/".((string)$_smarty_tpl->tpl_vars['document']->value['template']).".tpl")) {?>
@@ -84,6 +76,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       </div>
   </div> 
 </body>
+
 <script src="./js/common.js"></script>
 </html>
 <?php }} ?>
