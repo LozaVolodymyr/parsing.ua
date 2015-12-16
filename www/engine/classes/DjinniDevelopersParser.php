@@ -19,7 +19,7 @@ class DjinniDevelopersParser {
  							$path = $applicant->find('.profile', 0)->href;
 	 						$link = 'http://djinni.co';
  							$this->developers['link'] = $link.=$path;
- 							var_dump('<br>Count = '.$this->count.'<br>', $this->developers, '<br><br><br><br>');
+ 							var_dump('<br>Count = '.$this->count.'<br>', $this->developers, '<br><br>');
  						}
  					}
  			} 
@@ -40,6 +40,8 @@ class DjinniDeveloper {
  			public $eng_level;
  			public $skill;
  			public $expectations;
+ 			public $experience;
+
 
  		function getData() 
  			{
@@ -55,9 +57,9 @@ class DjinniDeveloper {
 			}
 
 
- 		public function getDevelopersInfo()
+ 		public function getDevelopersInfo($i)
  			{
- 				$this->getLink();
+ 				$this->getLink($i);
  				$this->getPosition();
  				$this->getSalary();
  				$this->getLocation();
@@ -65,6 +67,7 @@ class DjinniDeveloper {
  				$this->getLangugeExperience();
  				$this->getSkills();
  				$this->getExpectations();
+ 				$this->getExperience();
  				
  				$arrayDevelopers = array('link' => $this->link,
  										 'position' => $this->position,
@@ -73,7 +76,8 @@ class DjinniDeveloper {
  										 'years' => $this->years,
  										 'eng_level' => $this->eng_level,
  										 'skill' => $this->skill,
- 										 'expectations' => $this->expectations
+ 										 'expectations' => $this->expectations,
+ 										 'experience' => $this->experience
  										);
  					return $arrayDevelopers;
  			}
@@ -81,10 +85,10 @@ class DjinniDeveloper {
 
 
 
-  	 	private function getLink()
+  	 	private function getLink($i)
  			{
  				$dom = $this->getData();
- 				$applicant = $dom->find('.clearfix', 0);
+ 				$applicant = $dom->find('.clearfix', $i);
  				$path = $applicant->find('.profile', 0)->href;
 	 			$link = 'http://djinni.co';
 					$this->link = $link.=$path;
@@ -148,6 +152,15 @@ class DjinniDeveloper {
 
  					if (isset($one_dom->find('p> .profile', 1)->plaintext)) {
 	 					$this->expectations = $one_dom->find('p> .profile', 1)->plaintext;
+	 							
+	 				}
+ 			}
+ 		private function getExperience()
+ 			{	
+ 				$one_dom = $this->getDataOnePosition();
+
+ 					if (isset($one_dom->find('p> .profile', 0)->plaintext)) {
+	 					$this->experience = $one_dom->find('p> .profile', 0)->plaintext;
 	 							
 	 				}
  			}

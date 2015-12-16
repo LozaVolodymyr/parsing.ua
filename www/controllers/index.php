@@ -5,7 +5,10 @@
 		print_r($links);
 		// $tobd = $res->getLink();
  		// echo $res->link;
- 		$devs = $res->getDevelopersInfo();
- 		print_r($devs);
+ 		for ($i=0; $i < 3 ; $i++) { 
+ 			$devs = $res->getDevelopersInfo($i);
+ 			print_r($devs);
+ 			# code...
+ 		}
 
 	
